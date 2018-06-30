@@ -77,7 +77,7 @@ Both snippets do the same thing yet the second one is a lot easier to deal with.
 
 ### Transaction safety
 
-Under the hood, `Do` uses exceptions to halt unsuccessful operations, this can be slower if you are dealing with unsuccessful paths a lot, but usually, this is not an issue. Check out [this article](https://www.morozov.is/2018/05/27/do-notation-ruby.html) for actual benchmarks.
+Under the hood, `Do` uses `throw`/`catch` to halt unsuccessful operations, this can be slower if you are dealing with unsuccessful paths a lot, but usually, this is not an issue. Check out [this article](https://www.morozov.is/2018/05/27/do-notation-ruby.html) for actual benchmarks.
 
 One particular reason to use exceptions is the ability to make code transaction-friendly. In the example above, this piece of code is not atomic:
 
